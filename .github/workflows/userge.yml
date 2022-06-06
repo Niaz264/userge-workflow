@@ -7,11 +7,11 @@ on:
   workflow_dispatch:
     
 env:
-  GitHubMail: "iam.pro2@outlook.com"
-  GitHubName: "ProgrammingError" 
+  GitHubMail: "niaznafis265@gmail.com"
+  GitHubName: "Niaz264" 
 jobs:
   build:
-    runs-on: ubuntu-18.04
+    runs-on: ubuntu-22.04
 
     steps:
        - name: Checkout
@@ -27,12 +27,12 @@ jobs:
        - name: cloning repo
          continue-on-error: false
          run: |
-           git clone https://${GitHubName}:${{ secrets.GH_TOKEN }}@github.com/${{ secrets.CREDS }} userge
-       - name: Running Userge
+           git clone https://${GitHubName}:${{ secrets.GH_TOKEN }}@github.com/${{ secrets.CREDS }} CREDS
+       - name: Running Catuserbot
          timeout-minutes: 350
          continue-on-error: true
          run: |
-           cd userge
+           cd userbot
            docker-compose up -d
            docker-compose logs -f
        - name: Loop workflow
